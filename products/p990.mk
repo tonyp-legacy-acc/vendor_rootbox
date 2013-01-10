@@ -15,7 +15,7 @@ OVERLAY_TARGET := pa_hdpi
 
 # Setup device specific product configuration.
 PRODUCT_DEVICE := p990
-PRODUCT_NAME := rootbox_p990_tonyp
+PRODUCT_NAME := rootbox_p990
 PRODUCT_BRAND := LGE
 PRODUCT_MODEL := LG-P990
 
