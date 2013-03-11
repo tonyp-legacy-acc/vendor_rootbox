@@ -7,11 +7,8 @@ $(call inherit-product, vendor/rootbox/configs/common.mk)
 # Inherit GSM common stuff
 $(call inherit-product, vendor/rootbox/configs/gsm.mk)
 
-# I9300 overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/i9300
-
-# OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+# S3 overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/s3-common
 
 # Setup device specific product configuration.
 PRODUCT_DEVICE := i9300
@@ -25,7 +22,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=m0xx TARGET_DEVICE=m0 BUILD_FINGERP
 # Copy maguro specific prebuilt files
 PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/xhdpi/bootanimation.zip:system/media/bootanimation.zip
-
-# Copy Onandroid partitions table
-PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/common/onandroid/i9300/partlayout4nandroid:system/partlayout4nandroid

@@ -4,6 +4,10 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/common
 # Common dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/dictionaries
 
+# SuperUser
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.rb.superuser
+
 # AOKP Packages
 PRODUCT_PACKAGES += \
     AOKPtips \
@@ -11,25 +15,28 @@ PRODUCT_PACKAGES += \
     GooManager \
     LatinImeDictionaryPack \
     Microbes \
-    Onandroid \
     PerformanceControl \
     ROMControl \
-    SuperSU \
-    SwagPapers \
-    Torch \
-    UnicornPorn
+    Superuser \
+    su \
+    Torch
+
+# RootBox Packages
+PRODUCT_PACKAGES += \
+    RootBox \
+    XposedDPI \
+    XposedInstaller
 
 # CM Packages
 PRODUCT_PACKAGES += \
         audio_effects.conf \
 	DSPManager \
         libcyanogen-dsp \
-        LockClock  \
-        Trebuchet
+        LockClock
 
-# Use prebuilt su until fixed when built
-PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/common/xbin/su:system/xbin/su
+# RootBox build.prop tweaks
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ril.enable.amr.wideband=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -44,7 +51,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so \
-    vendor/rootbox/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml \
     vendor/rootbox/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf
 
 # init.d
@@ -54,10 +60,6 @@ PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
     vendor/rootbox/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/rootbox/prebuilt/common/bin/sysinit:system/bin/sysinit
-
-# Onandroid script
-PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/common/onandroid/onandroid:system/bin/onandroid
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

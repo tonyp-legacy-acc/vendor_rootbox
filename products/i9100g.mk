@@ -8,10 +8,7 @@ $(call inherit-product, vendor/rootbox/configs/common.mk)
 $(call inherit-product, vendor/rootbox/configs/gsm.mk)
 
 # i9100g overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/i9100g
-
-# OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_hdpi
+PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/s2-common
 
 # Setup device specific product configuration.
 PRODUCT_DEVICE := i9100g
@@ -27,7 +24,3 @@ PRODUCT_RELEASE_NAME := GT-I9100G
 # Copy maguro specific prebuilt files
 PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
-
-# Copy Onandroid partitions table
-PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/common/onandroid/s2-common/partlayout4nandroid:system/partlayout4nandroid

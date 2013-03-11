@@ -8,7 +8,7 @@ $(call inherit-product, vendor/rootbox/configs/common.mk)
 $(call inherit-product, vendor/rootbox/configs/gsm.mk)
 
 # SGS2 overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/i9100
+PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/n7000
 
 # Setup device specific product configuration.
 PRODUCT_DEVICE := n7000
@@ -22,9 +22,5 @@ PRODUCT_RELEASE_NAME := n7000
 
 # Copy Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
-
-# Copy Onandroid partitions table
-PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/common/onandroid/s2-common/partlayout4nandroid:system/partlayout4nandroid
+    vendor/rootbox/prebuilt/xhdpi/bootanimation.zip:system/media/bootanimation.zip
 
