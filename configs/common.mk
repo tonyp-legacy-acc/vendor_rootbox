@@ -53,6 +53,9 @@ PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so \
     vendor/rootbox/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf
 
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/pa_hdpi.conf:system/etc/beerbong/properties.conf
+
 # init.d
 PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/etc/init.local.rc:root/init.aokp.rc \
