@@ -54,7 +54,7 @@ PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf
 
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/pa_hdpi.conf:system/etc/beerbong/properties.conf
+    vendor/rootbox/prebuilt/pa_hdpi.conf:system/etc/beerbong/properties.conf
 
 # init.d
 PRODUCT_COPY_FILES += \
